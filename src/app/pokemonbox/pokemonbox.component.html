@@ -1,0 +1,13 @@
+<div class="bigbox">
+  <div>
+    <span
+      ><h1>
+        Name: {{ this.name | uppercase }} <span> ID : {{ this.pokeid }} </span>
+      </h1></span
+    >
+  </div>
+
+  <img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
+</div>
+<p>{{ this.description }}</p>
+<button (click)="getPokemonFromArray(this.counter)">Display</button>
