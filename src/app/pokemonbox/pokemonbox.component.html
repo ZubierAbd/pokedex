@@ -1,13 +1,5 @@
-<div class="bigbox">
-  <div>
-    <span
-      ><h1>
-        Name: {{ this.name | uppercase }} <span> ID : {{ this.pokeid }} </span>
-      </h1></span
-    >
+<body>
+  <div class="all" *ngFor="let element of pokemonarray">
+    <app-entry index="{{ element.id }}"> </app-entry>
   </div>
-
-  <img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
-</div>
-<p>{{ this.description }}</p>
-<button (click)="getPokemonFromArray(this.counter)">Display</button>
+</body>

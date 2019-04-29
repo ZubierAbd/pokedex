@@ -1,0 +1,12 @@
+img {
+  width: 40px;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #dfdfdf;
+  color: rebeccapurple;
+  display: block;
+}

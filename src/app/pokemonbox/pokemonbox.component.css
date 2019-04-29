@@ -1,4 +1,8 @@
 .sprite {
   width: 200px;
-  height: auto;
+  height: 10%;
+}
+
+.all {
+  display: grid;
 }

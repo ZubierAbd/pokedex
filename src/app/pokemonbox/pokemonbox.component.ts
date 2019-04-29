@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 @Component({
@@ -16,7 +16,7 @@ export class PokemonboxComponent implements OnInit {
   pokeid = "";
   spriteurl = "";
   description = "";
-  counter = 0;
+  counter = this.pokemonarray.length;
   getpokemon(id) {
     this.httpClient.get(this.baseurl + "pokemon/" + id + "/").subscribe(res => {
       this.pokemonarray.push(res);
@@ -30,7 +30,7 @@ export class PokemonboxComponent implements OnInit {
   }
 
   getallpokemon() {
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 20; i++) {
       this.getpokemon(i);
       this.getpokemonflavortext(i);
     }
@@ -42,11 +42,9 @@ export class PokemonboxComponent implements OnInit {
     this.description = this.pokemonflavorarray[
       this.counter
     ].flavor_text_entries[1].flavor_text;
-    this.counter += 1;
+    this.pokemonarray.sort();
   }
   ngOnInit() {
     this.getallpokemon();
-    //this.pokemonarray.sort();
   }
 }
-1;

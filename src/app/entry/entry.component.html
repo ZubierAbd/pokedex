@@ -1,0 +1,17 @@
+<div class="body2">
+  <div>
+    <div>
+      <span
+        ><h1 class="heading">
+          Name: {{ this.name | titlecase }}
+          <span> Id : {{ this.pokeid }} </span>
+        </h1></span
+      >
+    </div>
+
+    <img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
+  </div>
+  <div class="textdescription" style="border: solid,10px,black">
+    <p>{{ this.description }}</p>
+  </div>
+</div>
