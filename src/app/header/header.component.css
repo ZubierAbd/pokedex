@@ -1,12 +1,18 @@
 img {
   width: 40px;
   height: auto;
-  display: block;
+  display: inline;
 }
 
 h1 {
   font-family: "Courier New", Courier, monospace;
-  background-color: #dfdfdf;
   color: rebeccapurple;
-  display: block;
+  display: inline;
+  font-size: 42px;
+}
+
+.header {
+  background-color: #afafef;
+  padding: 10px;
+  width: 100vw;
 }
