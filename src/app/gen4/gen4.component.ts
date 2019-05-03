@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: "app-pokemonbox",
-  templateUrl: "./pokemonbox.component.html",
-  styleUrls: ["./pokemonbox.component.css"]
+  selector: "app-gen4",
+  templateUrl: "./gen4.component.html",
+  styleUrls: ["./gen4.component.css"]
 })
-export class PokemonboxComponent implements OnInit {
+export class Gen4Component implements OnInit {
   constructor(private httpClient: HttpClient) {}
   baseurl = "https://pokeapi.co/api/v2/";
   flavorurl = "https://pokeapi.co/api/v2/pokemon-species/";
@@ -30,10 +30,9 @@ export class PokemonboxComponent implements OnInit {
   }
 
   getallpokemon() {
-    for (let i = 1; i <= 151; i++) {
+    for (let i = 252; i <= 386; i++) {
       this.getpokemon(i);
       this.getpokemonflavortext(i);
-      this.pokemonarray.sort();
     }
   }
   getPokemonFromArray() {

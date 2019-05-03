@@ -31,9 +31,23 @@ export class EntryComponent implements OnInit {
   getpokemonflavortext(index) {
     this.httpClient.get(this.flavorurl + index + "/").subscribe(res => {
       this.pokemonflavorarray.push(res);
-      this.description = this.pokemonflavorarray[0].flavor_text_entries[1].flavor_text;
+      console.log(this.pokemonflavorarray[0]);
+      if (
+        this.pokemonflavorarray[0].flavor_text_entries[0].language.name == "en"
+      ) {
+        this.description = this.pokemonflavorarray[0].flavor_text_entries[0].flavor_text;
+      } else if (
+        this.pokemonflavorarray[0].flavor_text_entries[1].language.name == "en"
+      ) {
+        this.description = this.pokemonflavorarray[0].flavor_text_entries[1].flavor_text;
+      } else if (
+        this.pokemonflavorarray[0].flavor_text_entries[2].language.name == "en"
+      ) {
+        this.description = this.pokemonflavorarray[0].flavor_text_entries[2].flavor_text;
+      }
     });
   }
+
   getdetails(index) {
     this.getpokemon(index);
     this.getpokemonflavortext(index);

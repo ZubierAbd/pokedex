@@ -30,7 +30,7 @@ export class Generation2Component implements OnInit {
   }
 
   getallpokemon() {
-    for (let i = 152; i <= 172; i++) {
+    for (let i = 152; i <= 251; i++) {
       this.getpokemon(i);
       this.getpokemonflavortext(i);
     }
