@@ -12,6 +12,14 @@ import { Generation3Component } from "./generation3/generation3.component";
 import { Gen4Component } from "./gen4/gen4.component";
 import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
+import { RouterModule, Routes } from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: "", component: PokemonboxComponent },
+  { path: "gen2", component: Generation2Component },
+  { path: "gen3", component: Generation3Component },
+  { path: "gen4", component: Gen4Component }
+];
 
 @NgModule({
   declarations: [
