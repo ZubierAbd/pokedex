@@ -13,19 +13,11 @@ import { Gen4Component } from "./gen4/gen4.component";
 import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
 import { RouterModule, Routes } from "@angular/router";
+import { AppRoutingModule } from "./app-routing/app-routing.module";
+import { Gen1Component } from "./gen1/gen1.component";
 import { Gen5Component } from "./gen5/gen5.component";
 import { Gen6Component } from "./gen6/gen6.component";
 import { Gen7Component } from "./gen7/gen7.component";
-
-const appRoutes: Routes = [
-  { path: "", component: PokemonboxComponent },
-  { path: "gen2", component: Generation2Component },
-  { path: "gen3", component: Generation3Component },
-  { path: "gen4", component: Gen4Component },
-  { path: "gen5", component: Gen5Component },
-  { path: "gen6", component: Gen6Component },
-  { path: "gen7", component: Gen7Component }
-];
 
 @NgModule({
   declarations: [
@@ -36,13 +28,18 @@ const appRoutes: Routes = [
     Generation2Component,
     MenuComponent,
     Generation3Component,
-    Gen4Component
+    Gen4Component,
+    Gen1Component,
+    Gen5Component,
+    Gen6Component,
+    Gen7Component
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

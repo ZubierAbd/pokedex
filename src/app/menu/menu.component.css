@@ -2,6 +2,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: red;
+  backround-color: #777777;
 }
 
 li {
@@ -9,4 +11,8 @@ li {
   padding: 10px;
   border: solid white 2px;
   background-color: #777777;
+}
+
+a {
+  color: red;
 }
