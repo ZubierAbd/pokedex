@@ -4,6 +4,7 @@ ul {
   padding: 0;
   color: red;
   backround-color: #777777;
+  width: inherit;
 }
 
 li {

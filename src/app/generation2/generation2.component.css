@@ -1,5 +1,7 @@
 body {
-  background-color: grey;
+  background-color: rgba(241, 114, 10, 0.753);
   margin: 0, auto;
   text-align: center;
+  padding: 10px;
+  padding-right: -10px;
 }

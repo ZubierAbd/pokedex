@@ -30,7 +30,7 @@ export class Gen4Component implements OnInit {
   }
 
   getallpokemon() {
-    for (let i = 252; i <= 386; i++) {
+    for (let i = 389; i <= 493; i++) {
       this.getpokemon(i);
       this.getpokemonflavortext(i);
     }
