@@ -35,7 +35,9 @@ export class EntryComponent implements OnInit {
         this.colorA = this.getTypecolor(this.type1, this.colorA);
         if (this.pokemonarray[0].types[1].type.name != "") {
           this.type2 = this.pokemonarray[0].types[1].type.name;
-          this.colorB = this.getTypecolor(this.type2, this.colorB);
+          if (this.type2 != "") {
+            this.colorB = this.getTypecolor(this.type2, this.colorB);
+          }
         }
         console.log(this.colorA);
         console.log(this.name);
