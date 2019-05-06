@@ -13,9 +13,14 @@ export class EntryComponent implements OnInit {
   pokemonarray = [];
   pokemonflavorarray = [];
   counter: number = 0;
+  type1 = "";
+  type2 = "";
   @Input("index") index: number;
   baseurl = "https://pokeapi.co/api/v2/";
   flavorurl = "https://pokeapi.co/api/v2/pokemon-species/";
+  boxcolor = "";
+  colorA = "";
+  colorB = "";
 
   constructor(private httpClient: HttpClient) {}
   getpokemon(index) {
@@ -26,12 +31,20 @@ export class EntryComponent implements OnInit {
         this.name = this.pokemonarray[0].name;
         this.spriteurl = this.pokemonarray[0].sprites.front_default;
         this.pokeid = this.pokemonarray[0].id;
+        this.type1 = this.pokemonarray[0].types[0].type.name;
+        this.colorA = this.getTypecolor(this.type1, this.colorA);
+        if (this.pokemonarray[0].types[1].type.name != "") {
+          this.type2 = this.pokemonarray[0].types[1].type.name;
+          this.colorB = this.getTypecolor(this.type2, this.colorB);
+        }
+        console.log(this.colorA);
+        console.log(this.name);
       });
   }
+
   getpokemonflavortext(index) {
     this.httpClient.get(this.flavorurl + index + "/").subscribe(res => {
       this.pokemonflavorarray.push(res);
-      console.log(this.pokemonflavorarray[0]);
       if (
         this.pokemonflavorarray[0].flavor_text_entries[0].language.name == "en"
       ) {
@@ -46,6 +59,47 @@ export class EntryComponent implements OnInit {
         this.description = this.pokemonflavorarray[0].flavor_text_entries[2].flavor_text;
       }
     });
+  }
+
+  getTypecolor(type: string, color: string): string {
+    if (type == "normal") {
+      color = "#A8A878";
+    } else if (type == "fire") {
+      color = "#f08030";
+    } else if (type == "fighting") {
+      color = "#c03028";
+    } else if (type == "water") {
+      color = "#6890f0";
+    } else if (type == "flying") {
+      color = "#a890f0";
+    } else if (type == "grass") {
+      color = "#78c850";
+    } else if (type == "poison") {
+      color = "#a040a0";
+    } else if (type == "electric") {
+      color = "#f8d030";
+    } else if (type == "ground") {
+      color = "#e0c068";
+    } else if (type == "psychic") {
+      color = "#f85888";
+    } else if (type == "rock") {
+      color = "#b8a038";
+    } else if (type == "ice") {
+      color = "#98D8D8";
+    } else if (type == "bug") {
+      color = "#A8B820";
+    } else if (type == "dragon") {
+      color = "#7038F8";
+    } else if (type == "ghost") {
+      color = "#705898";
+    } else if (type == "dark") {
+      color = "#705848";
+    } else if (type == "steel") {
+      color = "#b8b8d0";
+    } else if (type == "fairy") {
+      color = "#ee99ac";
+    }
+    return color;
   }
 
   getdetails(index) {
