@@ -4,3 +4,5 @@ body {
   text-align: center;
   background-color: #444242;
 }
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

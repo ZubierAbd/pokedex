@@ -18,6 +18,9 @@ import { Gen1Component } from "./gen1/gen1.component";
 import { Gen5Component } from "./gen5/gen5.component";
 import { Gen6Component } from "./gen6/gen6.component";
 import { Gen7Component } from "./gen7/gen7.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MaterialModule } from "../material.module";
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +35,17 @@ import { Gen7Component } from "./gen7/gen7.component";
     Gen1Component,
     Gen5Component,
     Gen6Component,
-    Gen7Component
+    Gen7Component,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
