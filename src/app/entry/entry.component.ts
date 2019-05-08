@@ -21,6 +21,16 @@ export class EntryComponent implements OnInit {
   boxcolor = "";
   colorA = "";
   colorB = "";
+  height = 0;
+  weight = 0;
+  evolution = "";
+  SPD = "";
+  S_DEF = "";
+  S_ATK = "";
+  ATK = "";
+  DEF = "";
+  HP = "";
+  showModal = false;
 
   constructor(private httpClient: HttpClient) {}
   getpokemon(index) {
@@ -39,8 +49,15 @@ export class EntryComponent implements OnInit {
             this.colorB = this.getTypecolor(this.type2, this.colorB);
           }
         }
-        console.log(this.colorA);
-        console.log(this.name);
+        this.height = this.pokemonarray[0].height / 10;
+        this.weight = this.pokemonarray[0].weight / 10;
+        this.SPD = this.pokemonarray[0].stats[0].base_stat;
+        this.S_ATK = this.pokemonarray[0].stats[2].base_stat;
+        this.S_DEF = this.pokemonarray[0].stats[1].base_stat;
+        this.DEF = this.pokemonarray[0].stats[3].base_stat;
+        this.ATK = this.pokemonarray[0].stats[4].base_stat;
+        this.HP = this.pokemonarray[0].stats[5].base_stat;
+        this.evolution = this.pokemonflavorarray[0].evolves_from_species.name;
       });
   }
 
@@ -62,6 +79,10 @@ export class EntryComponent implements OnInit {
       }
     });
   }
+
+  toggleModal = () => {
+    this.showModal = !this.showModal;
+  };
 
   getTypecolor(type: string, color: string): string {
     if (type == "normal") {

@@ -30,7 +30,7 @@ export class Gen1Component implements OnInit {
   }
 
   getallpokemon() {
-    for (let i = 1; i <= 151; i++) {
+    for (let i = 1; i <= 10; i++) {
       this.getpokemon(i);
       this.getpokemonflavortext(i);
       this.pokemonarray.sort();

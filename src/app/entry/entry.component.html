@@ -1,4 +1,4 @@
-<div class="body2">
+<div class="body2" (click)="toggleModal()">
   <div>
     <div>
       <span
@@ -21,4 +21,17 @@
   <div class="textdescription" style="border: solid,10px,black">
     <p>{{ this.description }}</p>
   </div>
+</div>
+
+<div class="app">
+  <app-modal
+    [show]="showModal"
+    [customClass]="'custom_modal_class'"
+    [closeCallback]="toggleModal"
+  >
+    <h2>Told Ya!</h2>
+    <p>
+      STUFF
+    </p>
+  </app-modal>
 </div>
