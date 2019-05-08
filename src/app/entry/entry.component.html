@@ -29,9 +29,52 @@
     [customClass]="'custom_modal_class'"
     [closeCallback]="toggleModal"
   >
-    <h2>Told Ya!</h2>
-    <p>
-      STUFF
-    </p>
+    <div class="body2" (click)="toggleModal()">
+      <div>
+        <div>
+          <span
+            ><h1 class="heading">
+              {{ this.name | titlecase }}
+            </h1></span
+          >
+          <div>
+            <span> height: {{ this.height }} m </span>
+            <span> weight: {{ this.weight }} kg</span>
+          </div>
+        </div>
+
+        ><img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
+      </div>
+      <div class="type">
+        <span class="type1" [style.background-color]="this.colorA"
+          >{{ this.type1 | titlecase }}
+        </span>
+        <span class="type2" [style.background-color]="this.colorB">
+          {{ this.type2 | titlecase }}
+        </span>
+      </div>
+      <div class="textdescription" style="border: solid,10px,black">
+        <p>{{ this.description }}</p>
+
+        <div>
+          <p *ngIf="showEvolution">
+            This pokemon evolves from {{ this.evolution }}
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <span class="stats">
+          <ul>
+            <li>SPEED : {{ this.SPD }}</li>
+            <li>S. ATK : {{ this.S_ATK }}</li>
+            <li>S. DEF : {{ this.S_DEF }}</li>
+            <li>HP : {{ this.HP }}</li>
+            <li>ATK : {{ this.ATK }}</li>
+            <li>DEF : {{ this.DEF }}</li>
+          </ul>
+        </span>
+      </div>
+    </div>
   </app-modal>
 </div>

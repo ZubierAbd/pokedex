@@ -21,8 +21,8 @@ export class EntryComponent implements OnInit {
   boxcolor = "";
   colorA = "";
   colorB = "";
-  height = 0;
-  weight = 0;
+  height = "";
+  weight = "";
   evolution = "";
   SPD = "";
   S_DEF = "";
@@ -31,7 +31,7 @@ export class EntryComponent implements OnInit {
   DEF = "";
   HP = "";
   showModal = false;
-
+  showEvolution = false;
   constructor(private httpClient: HttpClient) {}
   getpokemon(index) {
     this.httpClient
@@ -49,8 +49,8 @@ export class EntryComponent implements OnInit {
             this.colorB = this.getTypecolor(this.type2, this.colorB);
           }
         }
-        this.height = this.pokemonarray[0].height / 10;
-        this.weight = this.pokemonarray[0].weight / 10;
+        this.height = (this.pokemonarray[0].height / 10).toFixed(1);
+        this.weight = (this.pokemonarray[0].weight / 10).toFixed(1);
         this.SPD = this.pokemonarray[0].stats[0].base_stat;
         this.S_ATK = this.pokemonarray[0].stats[2].base_stat;
         this.S_DEF = this.pokemonarray[0].stats[1].base_stat;
@@ -58,6 +58,9 @@ export class EntryComponent implements OnInit {
         this.ATK = this.pokemonarray[0].stats[4].base_stat;
         this.HP = this.pokemonarray[0].stats[5].base_stat;
         this.evolution = this.pokemonflavorarray[0].evolves_from_species.name;
+        if (this.evolution) {
+          this.showEvolution = true;
+        }
       });
   }
 
