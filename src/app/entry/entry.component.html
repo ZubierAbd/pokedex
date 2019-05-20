@@ -7,8 +7,9 @@
         </h1></span
       >
     </div>
-
-    <img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
+    <div class="backgroundofsprite">
+      <img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
+    </div>
   </div>
   <div class="type">
     <span class="type1" [style.background-color]="this.colorA"
@@ -18,6 +19,7 @@
       {{ this.type2 | titlecase }}
     </span>
   </div>
+
   <div class="textdescription" style="border: solid,10px,black">
     <p>{{ this.description }}</p>
   </div>
@@ -29,7 +31,7 @@
     [customClass]="'custom_modal_class'"
     [closeCallback]="toggleModal"
   >
-    <div class="body2" (click)="toggleModal()">
+    <div class="body2 " (click)="toggleModal()">
       <div>
         <div>
           <span
