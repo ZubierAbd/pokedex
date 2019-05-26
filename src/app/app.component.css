@@ -1,4 +1,13 @@
 body {
   background-color: #000;
   padding: 2px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+header {
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
 }

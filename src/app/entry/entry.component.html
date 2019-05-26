@@ -31,11 +31,11 @@
     [customClass]="'custom_modal_class'"
     [closeCallback]="toggleModal"
   >
-    <div class="body2 " (click)="toggleModal()">
+    <div class="body3 " (click)="toggleModal()">
       <div>
         <div>
           <span
-            ><h1 class="heading">
+            ><h1 class="heading2">
               {{ this.name | titlecase }}
             </h1></span
           >
@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        ><img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
+        <img class="sprite" src="{{ this.spriteurl }}" alt="{{ this.name }}" />
       </div>
       <div class="type">
         <span class="type1" [style.background-color]="this.colorA"
@@ -55,7 +55,11 @@
           {{ this.type2 | titlecase }}
         </span>
       </div>
-      <div class="textdescription" style="border: solid,10px,black">
+      <div
+        class="textdescription"
+        style="border: solid,10px,black"
+        style="font-size: 15px"
+      >
         <p>{{ this.description }}</p>
 
         <div>
@@ -63,19 +67,6 @@
             This pokemon evolves from {{ this.evolution }}
           </p>
         </div>
-      </div>
-
-      <div>
-        <span class="stats">
-          <ul>
-            <li>SPEED : {{ this.SPD }}</li>
-            <li>S. ATK : {{ this.S_ATK }}</li>
-            <li>S. DEF : {{ this.S_DEF }}</li>
-            <li>HP : {{ this.HP }}</li>
-            <li>ATK : {{ this.ATK }}</li>
-            <li>DEF : {{ this.DEF }}</li>
-          </ul>
-        </span>
       </div>
     </div>
   </app-modal>
