@@ -40,8 +40,12 @@
             </h1></span
           >
           <div>
-            <span> height: {{ this.height }} m </span>
-            <span> weight: {{ this.weight }} kg</span>
+            <span style="color: white ; font-size: 14px">
+              Height: {{ this.height }} m
+            </span>
+            <span style="color: white; font-size: 14px">
+              Weight: {{ this.weight }} kg</span
+            >
           </div>
         </div>
 
@@ -58,14 +62,12 @@
       <div
         class="textdescription"
         style="border: solid,10px,black"
-        style="font-size: 15px"
+        style="font-size: 18px; height: 250px"
       >
         <p>{{ this.description }}</p>
 
-        <div>
-          <p *ngIf="showEvolution">
-            This pokemon evolves from {{ this.evolution }}
-          </p>
+        <div *ngIf="showEvolution">
+          <p>This pokemon evolves from {{ this.evolution | titlecase }}</p>
         </div>
       </div>
     </div>

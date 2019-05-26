@@ -23,14 +23,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 90%;
+  max-height: 100%;
   overflow: auto;
   background: #232323;
   box-sizing: border-box;
   padding: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   border-radius: 4px;
-  width: 520px; /* This just a default width */
+  width: 450px; /* This just a default width */
 }
 
 .modal .modal_content > h2 {
@@ -57,5 +57,5 @@
 }
 
 .modal .close_modal:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }

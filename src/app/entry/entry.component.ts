@@ -57,7 +57,9 @@ export class EntryComponent implements OnInit {
         this.DEF = this.pokemonarray[0].stats[3].base_stat;
         this.ATK = this.pokemonarray[0].stats[4].base_stat;
         this.HP = this.pokemonarray[0].stats[5].base_stat;
-        this.evolution = this.pokemonflavorarray[0].evolves_from_species.name;
+        if (this.pokemonflavorarray[0].evolves_from_species.name) {
+          this.evolution = this.pokemonflavorarray[0].evolves_from_species.name;
+        }
         if (this.evolution) {
           this.showEvolution = true;
         }
