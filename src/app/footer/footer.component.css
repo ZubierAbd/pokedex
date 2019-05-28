@@ -9,8 +9,8 @@ footer :hover {
 }
 
 footer {
-  background-color: #343a40;
+  background-color: #171b1f;
   width: 100%;
-  height: 40px;
+  height: auto;
   padding: 5px;
 }

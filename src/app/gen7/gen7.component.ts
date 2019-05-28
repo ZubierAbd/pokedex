@@ -12,7 +12,7 @@ export class Gen7Component implements OnInit {
   pokemonarray = [];
 
   getallpokemon() {
-    for (let i = 722; i <= 809; i++) {
+    for (let i = 722; i <= 807; i++) {
       this.pokemonarray.push(i);
     }
   }
